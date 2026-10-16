@@ -1,0 +1,35 @@
+# OS & Editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.zcode/
+*.iml
+*.ipr
+*.iws
+
+# Flutter / Dart
+**/.dart_tool/
+**/build/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub-cache/
+**/.pub/
+
+# Android Build & Native
+**/android/.gradle/
+**/android/local.properties
+**/android/key.properties
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/*.apk
+**/*.aab
+**/*.jks
+**/*.keystore
+
+# Logs & Dumps
+*.log
+*.hprof
+replay_*.log
+hs_err_*.log

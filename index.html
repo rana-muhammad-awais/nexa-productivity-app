@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#5B5FEF" />
+    <meta
+      name="description"
+      content="Nexa — All-in-one productivity: tasks, notes, expenses, resources"
+    />
+    <title>Nexa — Productivity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/app.css?v=20260721" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div id="app">
+      <div id="app-status" class="app-status" role="status" aria-live="polite">
+        Loading Nexa…
+      </div>
+      <header class="top-bar">
+        <h1 class="top-bar__title" id="page-title">Home</h1>
+        <div class="top-bar__actions">
+          <button class="icon-btn" id="btn-theme" aria-label="Toggle theme">
+            <i data-lucide="sun"></i>
+          </button>
+          <button class="icon-btn" id="btn-search" aria-label="Global search">
+            <i data-lucide="search"></i>
+          </button>
+          <button class="icon-btn" id="btn-settings" aria-label="Settings">
+            <i data-lucide="settings"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="main-content" id="main-content" role="main"></main>
+
+      <nav class="bottom-nav" aria-label="Main navigation">
+        <button
+          class="bottom-nav__item active"
+          data-tab="home"
+          aria-label="Home"
+        >
+          <i data-lucide="home"></i>
+          <span>Home</span>
+        </button>
+        <button class="bottom-nav__item" data-tab="tasks" aria-label="Tasks">
+          <i data-lucide="check-square"></i>
+          <span>Tasks</span>
+        </button>
+        <button class="bottom-nav__item" data-tab="notes" aria-label="Notes">
+          <i data-lucide="file-text"></i>
+          <span>Notes</span>
+        </button>
+        <button
+          class="bottom-nav__item"
+          data-tab="expenses"
+          aria-label="Expenses"
+        >
+          <i data-lucide="wallet"></i>
+          <span>Expenses</span>
+        </button>
+        <button
+          class="bottom-nav__item"
+          data-tab="resources"
+          aria-label="Resources"
+        >
+          <i data-lucide="folder-lock"></i>
+          <span>Resources</span>
+        </button>
+      </nav>
+
+      <button class="fab" id="fab" aria-label="Quick add">
+        <i data-lucide="plus"></i>
+      </button>
+    </div>
+
+    <div class="overlay" id="overlay" hidden></div>
+    <div class="bottom-sheet" id="bottom-sheet" hidden></div>
+    <div class="modal" id="modal" hidden></div>
+    <div class="search-panel" id="search-panel" hidden></div>
+    <div class="onboarding" id="onboarding" hidden></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script type="module" src="js/app.js?v=20260721"></script>
+  </body>
+</html>
