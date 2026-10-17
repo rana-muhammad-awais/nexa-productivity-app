@@ -25,8 +25,9 @@ function applyTheme(theme) {
   if (themeBtn) {
     const icon = themeBtn.querySelector('i');
     if (icon) {
-      icon.setAttribute('data-lucide', resolved === 'dark' ? 'moon' : 'sun');
-      if (window.lucide) lucide.createIcons();
+      if (typeof window !== 'undefined' && window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      }
     }
   }
 }
@@ -353,8 +354,11 @@ function init() {
 
     subscribe(() => {});
 
-    if (!getState().user.onboarded) showOnboarding();
-    else renderCurrentPage();
+    renderCurrentPage();
+
+    if (!getState().user.onboarded) {
+      showOnboarding();
+    }
 
     refreshIcons();
     hideAppStatus();
@@ -388,4 +392,8 @@ window.addEventListener('unhandledrejection', event => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', init);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}

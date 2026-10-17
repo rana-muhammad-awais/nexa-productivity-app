@@ -23,9 +23,7 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="app">
-      <div id="app-status" class="app-status" role="status" aria-live="polite">
-        Loading Nexa…
-      </div>
+      <div id="app-status" class="app-status" role="status" aria-live="polite" hidden></div>
       <header class="top-bar">
         <h1 class="top-bar__title" id="page-title">Home</h1>
         <div class="top-bar__actions">
@@ -89,8 +87,10 @@
     <div class="search-panel" id="search-panel" hidden></div>
     <div class="onboarding" id="onboarding" hidden></div>
 
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <script type="module" src="js/app.js?v=20260721"></script>
+    <script src="js/vendor/lucide.min.js"></script>
+    <script>if (!window.lucide) document.write('<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"><\/script>');</script>
+    <script src="js/vendor/chart.umd.min.js"></script>
+    <script>if (!window.Chart) document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"><\/script>');</script>
+    <script defer src="js/bundle.js"></script>
   </body>
 </html>

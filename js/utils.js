@@ -147,5 +147,7 @@ export function escapeHtml(str) {
 }
 
 export function refreshIcons() {
-  if (window.lucide) lucide.createIcons();
+  if (typeof window !== 'undefined' && window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons();
+  }
 }
